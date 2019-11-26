@@ -10,22 +10,22 @@ export class ZoneService {
   constructor(private http: HttpClient) { }
 
   getAllZones(){
-    const path = ' http://localhost:10010/zone';
+    const path = 'http://granjapp2.appspot.com/zone';
     return this.http.get<Zone[]>(path);
   }
 
-  getZone(id){
-    const path = 'http://localhost:10010/zone/';
+  getZone(id:number){
+    const path = 'http://granjapp2.appspot.com/zone/';
     return this.http.get<Zone>(path + id);
   }
 
   createZone(zone:Zone){
-    const path = ' http://localhost:10010/zone';
+    const path = ' http://granjapp2.appspot.com/zone';
     return this.http.post(path, zone)
   }
   
   updateZone(id, zone:Zone){
-    const path = ' http://localhost:10010/zone/';
+    const path = ' http://granjapp2.appspot.com/zone';
     return this.http.put(path + id,zone);
   }
 

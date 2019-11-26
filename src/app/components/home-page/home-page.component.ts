@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from "@angular/forms";
 import { ZoneService } from '../../services/zone.service';
 
 @Component({
@@ -7,9 +8,10 @@ import { ZoneService } from '../../services/zone.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  name = new FormControl('');
 
   constructor(
-    private zoneService: ZoneService
+    private zoneService: ZoneService,
   ){}
 
   ngOnInit() {
@@ -23,7 +25,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getZone(){
-    this.zoneService.getZone(1)
+    this.zoneService.getZone(2)
     .subscribe(zone => {
       console.log(zone);
     });
@@ -31,7 +33,9 @@ export class HomePageComponent implements OnInit {
 
   createZone(){
     const zone = {
-      name: "ayudame diosito"
+      id: '3',
+      name: "ayudame diosito",
+      team: '1'
     };
     this.zoneService.createZone(zone)
     .subscribe((newZone) => {
@@ -39,15 +43,15 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  updateZone(){
+  /*updateZone(){
     const zone = {
-      name: "cambio de nombre"
+      name: "nombre nuevo"
     };
     this.zoneService.updateZone(3, zone)
     .subscribe((newZone) => {
       console.log(newZone);
     });
-  }
+  }*/
 
 
 }

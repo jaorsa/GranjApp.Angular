@@ -1,17 +1,23 @@
 <div class="jumbotron">
-    <h1 class="display-3">Bienvenido!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <h2 class="display-3">Zonas</h2>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <label>
+      Name:
+      <input type="text" [formControl]="name">
+    </label>
     <p class="lead">
       <button (click)="getAllZones()">getAllZones()</button>
+      
       <button (click)="getZone()">getZone()</button>
       <button (click)="createZone()">createZone()</button>
       <button (click)="updateZone()">updateZone()</button>
+      
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
   </div>
-  <div class="jumbotron">
+  
+ 
+  <!--div class="jumbotron">
     <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
         <div class="card-header">Header</div>
         <div class="card-body">
@@ -26,4 +32,4 @@
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-  </div>
+  </div-->
