@@ -10,7 +10,6 @@ import {AccessPageComponent} from './components/access-page/access-page.componen
 import {NotFoundPageComponent} from './components/not-found-page/not-found-page.component';
 import { DashboardPageComponent } from './components/dashboard-page/dashboard-page.component';
 import { LeftBarComponent } from './components/left-bar/left-bar.component';
-import { TeamPageComponent } from './components/team-page/team-page.component';
 import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.component';
 
 const routes: Routes = [
@@ -22,7 +21,6 @@ const routes: Routes = [
   {path: 'register', component: RegisterPageComponent },
   {path: 'access', component: AccessPageComponent },*/
   {path: 'dashboard', component: DashboardPageComponent },
-  {path: 'team', component: TeamPageComponent },
   {path: 'catalogo', component: CatalogoPageComponent },
   {path: '**', component: NotFoundPageComponent }
 ];
