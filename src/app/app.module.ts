@@ -21,6 +21,8 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { DashboardPageComponent } from './components/dashboard-page/dashboard-page.component';
 import { LeftBarComponent } from './components/left-bar/left-bar.component';
 import { AuthService } from './services/auth.service';
+import { TeamPageComponent } from './components/team-page/team-page.component';
+import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { AuthService } from './services/auth.service';
     NotFoundPageComponent,
     DashboardPageComponent,
     LeftBarComponent,
+    TeamPageComponent,
+    CatalogoPageComponent,
   ],
   imports: [
     BrowserModule,
