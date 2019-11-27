@@ -33,9 +33,8 @@ export class HomePageComponent implements OnInit {
 
   createZone(){
     const zone = {
-      id: '3',
-      name: "ayudame diosito",
-      team: '1'
+      name: "zona4",
+      team: 1
     };
     this.zoneService.createZone(zone)
     .subscribe((newZone) => {
@@ -43,15 +42,23 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  /*updateZone(){
+  deleteZone(){
+    this.zoneService.deleteZone(6)
+    .subscribe(zone => {
+      console.log(zone);
+    });
+  }
+
+  updateZone(){
     const zone = {
-      name: "nombre nuevo"
+      name: "zone2.5",
+      team: 2
     };
-    this.zoneService.updateZone(3, zone)
+    this.zoneService.updateZone(2, zone)
     .subscribe((newZone) => {
       console.log(newZone);
     });
-  }*/
+  }
 
 
 }
