@@ -26,7 +26,12 @@ export class ZoneService {
   
   updateZone(id, zone:Zone){
     const path = ' http://granjapp2.appspot.com/zone';
-    return this.http.put(path + id,zone);
+    return this.http.put(path +'/' +id,zone);
+  }
+
+  deleteZone(id:number){
+    const path = 'http://granjapp2.appspot.com/zone/';
+    return this.http.delete<Zone>(path + id);
   }
 
 
