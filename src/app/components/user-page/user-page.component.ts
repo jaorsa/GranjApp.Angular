@@ -31,9 +31,10 @@ export class UserPageComponent implements OnInit {
 
   createUser(){
     const user = {
-      name: "Isela",
-      lastname: "Crello",
-      correo: "A01234567@itesm.mx"
+      name: "Soila",
+      lastname: "Cerda",
+      correo: "A03543334@itesm.mx",
+      estrellas: 6
     };
     this.userService.createUser(user)
     .subscribe((newUser) => {
@@ -43,11 +44,12 @@ export class UserPageComponent implements OnInit {
 
   updateUser(){
     const user = {
-      name: "Larry",
-      lastname: "Casiesta",
-      correo: "A07654321@tec.mx"
+      name: "Jacky",
+      lastname: "Chan",
+      correo: "xXx_NinJacky_xXx@yahoo.mx",
+      estrellas: 7
     };
-    this.userService.updateUser(7, user)
+    this.userService.updateUser(13, user)
     .subscribe((newUser) => {
       console.log(newUser);
     });
