@@ -9,21 +9,28 @@ import { RoleService } from '../../services/role.service';
 })
 export class TeamPageComponent implements OnInit {
   teams;
-  roles;
+  users: number;
+  lista;
+
   constructor(
     private teamService: TeamService,
     private roleService: RoleService,
   ){
     teamService.getAllTeams().subscribe(team => {
       this.teams = team;
-    });
-    roleService.getAllRoles().subscribe(role => {
-      this.roles = role;
+      this.users = team[3].usuarios.length;
+      this.lista = team[3].usuarios;
     });
   }
 
   ngOnInit() {
 
+  }
+
+  deleteRole(id){
+    this.roleService.deleteAnimal(id).subscribe(msn => {
+      console.log(msn);
+    });
   }
 
 }

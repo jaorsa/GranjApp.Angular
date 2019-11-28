@@ -1,5 +1,4 @@
 export interface Role {
-  role: number,
+  team: number,
   user: number,
-  team: number
 }

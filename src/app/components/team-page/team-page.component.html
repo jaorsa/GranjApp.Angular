@@ -16,14 +16,16 @@
         <th>Opciones</th>
       </tr>
     </thead>
-    <tbody *ngFor="let u of roles;">
-      <tr>{{u.user.name}} {{u.user.lastname}}</tr>
-      <tr>{{u.user.correo}}</tr>
-      <tr></tr>
+    <tbody *ngIf="users">
+      <tr *ngFor="let u of lista;">
+        <th>{{ u.name +" "+ u.lastname }}</th>
+        <th>{{ u.correo }}</th>
+        <th><button type="button" class="btn btn-danger" (clic)="deleteRole(u.id)">Eliminar</button></th>
+      </tr>
     </tbody>
   </table>
   <!-- si no hay valores -->
-  <div class = "anuncio col-md-12">
+  <div class = "anuncio col-md-12" *ngIf="!users">
     <p class = "anuncio-texto">No hay integrantes</p>
   </div>
 </div>
