@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
+import { RoleService } from '../../services/role.service';
 
 @Component({
   selector: 'app-team-page',
@@ -7,56 +8,22 @@ import { TeamService } from '../../services/team.service';
   styleUrls: ['./team-page.component.scss']
 })
 export class TeamPageComponent implements OnInit {
-
+  teams;
+  roles;
   constructor(
-    private teamService: TeamService
-  ){}
+    private teamService: TeamService,
+    private roleService: RoleService,
+  ){
+    teamService.getAllTeams().subscribe(team => {
+      this.teams = team;
+    });
+    roleService.getAllRoles().subscribe(role => {
+      this.roles = role;
+    });
+  }
 
   ngOnInit() {
-  }
 
-  getAllTeams(){
-    this.teamService.getAllTeams()
-    .subscribe(teams => {
-      console.log(teams);
-    });
   }
-
-  getTeam(){
-    this.teamService.getTeam(1)
-    .subscribe(team => {
-      console.log(team);
-    });
-  }
-
-  createTeam(){
-    const team = {
-      name: "Linces :v",
-      description: "que equipo?"
-    };
-    this.teamService.createTeam(team)
-    .subscribe((newTeam) => {
-      console.log(newTeam);
-    });
-  }
-
-  updateTeam(){
-    const team = {
-      name: "equipo dinamita",
-      description: "porfis funciona"
-    };
-    this.teamService.updateTeam(3, team)
-    .subscribe((newTeam) => {
-      console.log(newTeam);
-    });
-  }
-
-  deleteTeam(){
-    this.teamService.deleteTeam(2)
-    .subscribe(team => {
-      console.log(team);
-    });
-  }
-
 
 }
