@@ -16,6 +16,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { TeamPageComponent } from "./components/team-page/team-page.component";
 import { PlantingPageComponent } from "./components/planting-page/planting-page.component";
 import { UserPageComponent } from "./components/user-page/user-page.component";
+import { AnimalPageComponent } from "./components/animal-page/animal-page.component";
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -33,6 +34,7 @@ import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.
     TeamPageComponent,
     PlantingPageComponent,
     UserPageComponent,
+    AnimalPageComponent,
     NavBarComponent,
     RegisterPageComponent,
     LoginPageComponent,
