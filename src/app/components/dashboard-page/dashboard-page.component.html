@@ -15,10 +15,10 @@
           </tr>
         </thead>
         <tbody *ngIf="act">
-          <tr *ngFor="let u of lista_act;">
-            <th>{{u.name}}</th>
-            <th>Usuario :v</th>
-            <th>{{u.fechaInicio}}</th>
+          <tr *ngFor="let u of act;">
+            <th>{{u[1].name}}</th>
+            <th>{{u[0].name+" "+u[0].lastname}}</th>
+            <th>{{u[1].fechaInicio}}</th>
             <th>Bools</th>
           </tr>
         </tbody>
@@ -72,7 +72,7 @@
           </tr>
         </thead>
         <tbody *ngIf="animales">
-          <tr *ngFor="let u of lista_a;">
+          <tr *ngFor="let u of animales;">
             <th>{{u.name}}</th>
             <th>Aqui va el animal</th>
             <th>Aqui va la salud</th>

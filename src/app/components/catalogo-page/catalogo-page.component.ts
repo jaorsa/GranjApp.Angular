@@ -22,7 +22,7 @@ export class CatalogoPageComponent implements OnInit {
       for(var i:number = 0; i < this.zonas; i++){
         zoneService.getZone(this.lista_zonas[i].id).subscribe(s => {
           for(var j:number = 0; j < s.subzones.length; j++){
-            this.i_zones.push(s.subzones[j]);
+            this.i_zones.push([s.subzones[j],s]);
           }
         });
       }
