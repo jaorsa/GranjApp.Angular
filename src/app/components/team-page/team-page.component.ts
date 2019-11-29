@@ -28,9 +28,10 @@ export class TeamPageComponent implements OnInit {
   }
 
   deleteRole(id){
-    this.roleService.deleteAnimal(id).subscribe(msn => {
+    this.roleService.deleteRole(id).subscribe(msn => {
       console.log(msn);
     });
+    setTimeout(() => {location.reload()}, 5000);
   }
 
 }

@@ -20,7 +20,7 @@
       <tr *ngFor="let u of lista;">
         <th>{{ u.name +" "+ u.lastname }}</th>
         <th>{{ u.correo }}</th>
-        <th><button type="button" class="btn btn-danger" (clic)="deleteRole(u.id)">Eliminar</button></th>
+        <th><button type="button" class="btn btn-danger" (click)="deleteRole(u.id)">Eliminar</button></th>
       </tr>
     </tbody>
   </table>

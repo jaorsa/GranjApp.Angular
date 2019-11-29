@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Role } from '../interfaces/role';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { Role } from '../interfaces/role';
 })
 export class RoleService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllRoles(){
     const path = ' http://granjapp2.appspot.com/roles';
