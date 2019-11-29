@@ -4,4 +4,5 @@ export interface Team {
     animals: object[];
     usuarios: object[];
     zones: object[];
+    actividades: object[];
 }

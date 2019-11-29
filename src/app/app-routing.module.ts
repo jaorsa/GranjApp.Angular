@@ -14,10 +14,10 @@ import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.
 const routes: Routes = [
   {path: '', component: HomePageComponent },
   {path: 'team', component: TeamPageComponent },
-  /*{path: 'animal', component: AnimalPageComponent},
+  //{path: 'animal', component: AnimalPageComponent},
   {path: 'login', component: LoginPageComponent },
   {path: 'register', component: RegisterPageComponent },
-  {path: 'access', component: AccessPageComponent },*/
+  //{path: 'access', component: AccessPageComponent },
   {path: 'dashboard', component: DashboardPageComponent },
   {path: 'catalogo', component: CatalogoPageComponent },
   {path: '**', component: NotFoundPageComponent }

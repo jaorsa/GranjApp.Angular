@@ -16,7 +16,10 @@
         </thead>
         <tbody>
           <tr>
-            <!-- llamada base -->
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </tbody>
       </table>
@@ -41,14 +44,17 @@
             <th>Salud</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <!-- llamada base -->
+        <tbody *ngIf="actividades">
+          <tr *ngFor="let u of lista_act;">
+            <th>{{u.zo}}</th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </tbody>
       </table>
       <!-- si no hay valores -->
-      <div class = "anuncio col-md-12">
+      <div class = "anuncio col-md-12" *ngIf="!actividades">
         <p class = "anuncio-texto">No hay cultivos</p>
       </div>
     </div>
@@ -65,14 +71,16 @@
             <th>Salud</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <!-- llamada base -->
+        <tbody *ngIf="animales">
+          <tr *ngFor="let u of lista_a;">
+            <th>{{u.name}}</th>
+            <th>Aqui va el animal</th>
+            <th>Aqui va la salud</th>
           </tr>
         </tbody>
       </table>
       <!-- si no hay valores -->
-      <div class = "anuncio col-md-12">
+      <div class = "anuncio col-md-12" *ngIf="!animales">
         <p class = "anuncio-texto">No hay animales</p>
       </div>
     </div>
