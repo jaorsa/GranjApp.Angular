@@ -11,11 +11,9 @@ import { LeftBarComponent } from './components/left-bar/left-bar.component';
 import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.component';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent },
+  {path: '', component: LoginPageComponent },
   {path: 'team', component: TeamPageComponent },
-  {path: 'login', component: LoginPageComponent },
   {path: 'register', component: RegisterPageComponent },
-  //{path: 'access', component: AccessPageComponent },
   {path: 'dashboard', component: DashboardPageComponent },
   {path: 'catalogo', component: CatalogoPageComponent },
   {path: '**', component: NotFoundPageComponent }

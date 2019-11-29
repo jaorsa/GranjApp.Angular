@@ -31,7 +31,7 @@ export class DashboardPageComponent implements OnInit {
           this.act.push([u, this.comodin1]);
         });
       }
-      
+
       for(var i:number = 0; i < team[0].animals.length; i++){
         this.comodin2 = team[0].animals[i];
         specieService.getSpecie(this.comodin2.especie).subscribe(s => {
@@ -48,17 +48,12 @@ export class DashboardPageComponent implements OnInit {
                 this.comodin5 = sz.plantings[k];
                 cropService.getCrop(this.comodin5.cultivo).subscribe(c => {
                   this.cultivos.push([this.comodin3, this.comodin4, this.comodin5, c]);
-                  console.log(this.comodin3);
-                  console.log(this.comodin4);
-                  console.log(this.comodin5);
-                  console.log(c);
                 });
               }
             });
           }
         });
       }
-      console.log(this.cultivos);
     });
   }
 
