@@ -18,7 +18,7 @@
         <th>{{z.name}}</th>
         <th>
           <button type="button" class="btn btn-warning">Editar</button>
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-danger" (click)="deleteZone(z.id)">Eliminar</button>
         </th>
       </tr>
     </tbody>
@@ -50,7 +50,7 @@
         <th>{{ s[1].name }}</th>
         <th>
           <button type="button" class="btn btn-warning">Editar</button>
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-danger" (click)="deleteSubzone(s[0].id)">Eliminar</button>
         </th>
       </tr>
     </tbody>

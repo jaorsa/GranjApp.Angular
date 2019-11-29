@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { ZoneService } from '../../services/zone.service';
+import { SubzoneService } from '../../services/subzone.service';
 
 @Component({
   selector: 'app-catalogo-page',
@@ -14,7 +15,7 @@ export class CatalogoPageComponent implements OnInit {
   i_zones:object[] = [];
 
   constructor(private teamService: TeamService,
-  private zoneService: ZoneService,) {
+  private zoneService: ZoneService,private subzoneService: SubzoneService,) {
     teamService.getAllTeams().subscribe(team => {
       this.teams = team[0];
       this.zonas = team[0].zones.length;
@@ -33,4 +34,16 @@ export class CatalogoPageComponent implements OnInit {
 
   }
 
+  deleteZone(id){
+    this.zoneService.deleteZone(id).subscribe(msn => {
+      console.log(msn);
+    });
+    setTimeout(() => {location.reload()}, 5000);
+  }
+  deleteSubzone(id){
+    this.subzoneService.deleteSubzone(id).subscribe(msn => {
+      console.log(msn);
+    });
+    setTimeout(() => {location.reload()}, 5000);
+  }
 }
