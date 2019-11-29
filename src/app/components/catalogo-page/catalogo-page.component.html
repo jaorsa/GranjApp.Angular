@@ -10,14 +10,15 @@
         <th>Opciones</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <!-- llamada base -->
+    <tbody *ngIf="zonas">
+      <tr *ngFor="let z of lista_zonas;">
+        <th>{{z.name}}</th>
+        <th>Opciones</th>
       </tr>
     </tbody>
   </table>
   <!-- si no hay valores -->
-  <div class = "anuncio col-md-12">
+  <div class = "anuncio col-md-12" *ngIf="!zonas">
     <p class = "anuncio-texto">No hay zonas</p>
   </div>
 </div>
@@ -25,7 +26,7 @@
   <div class = "titulo-tabla col-md-12">
     <h3>Subzonas</h3>
   </div>
-  <!-- crear especie -->
+  <!-- crear zona -->
   <table class = "table table-striped">
     <thead>
       <tr>
@@ -34,9 +35,8 @@
         <th>Opciones</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
       <tr>
-        <!-- llamada base -->
       </tr>
     </tbody>
   </table>

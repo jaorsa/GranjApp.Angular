@@ -3,7 +3,7 @@
     <img class="card-img-top" src="../assets/logo.png" alt="Card image cap" width="180px" height="200px">
     <div class="card-body">
       <h2 class="card-title text-center">Inicia Sesión</h2>
-      <form class="" action="index.html" method="post">
+      <form (ngSubmit)="onSubmitLogin(mail, pw)">
         <div class="form-group">
           <label for="mail">Correo:</label>
           <input class="form-control" type="email" name="mail" value="">
