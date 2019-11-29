@@ -9,7 +9,7 @@ import { ZoneService } from '../../services/zone.service';
 })
 export class CatalogoPageComponent implements OnInit {
   teams;
-  zonas:object[] = [];
+  zonas;
   lista_zonas;
   i_zones:object[] = [];
 
