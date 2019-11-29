@@ -14,7 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { TeamPageComponent } from "./components/team-page/team-page.component";
-import { AnimalPageComponent } from "./components/animal-page/animal-page.component";
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -30,7 +29,6 @@ import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.
     AppComponent,
     HomePageComponent,
     TeamPageComponent,
-    AnimalPageComponent,
     NavBarComponent,
     RegisterPageComponent,
     LoginPageComponent,
