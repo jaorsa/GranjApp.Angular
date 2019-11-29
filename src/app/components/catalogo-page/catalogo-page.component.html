@@ -35,13 +35,16 @@
         <th>Opciones</th>
       </tr>
     </thead>
-    <tbody >
-      <tr>
+    <tbody *ngIf="i_zones">
+      <tr *ngFor = "let s of i_zones;">
+        <th>{{ s.name}}</th>
+        <th> chale</th>
+        <th>Opciones</th>
       </tr>
     </tbody>
   </table>
   <!-- si no hay valores -->
-  <div class = "anuncio col-md-12">
+  <div class = "anuncio col-md-12" *ngIf="!i_zones">
     <p class = "anuncio-texto">No hay subzonas</p>
   </div>
 </div>
