@@ -1,10 +1,10 @@
 export interface Activity {
   nombre: string;
-  fechaInicio: date;
-  terminado: integer;
+  fechaInicio: string;
+  terminado: number;
   descripcion: string;
-  complejidad: integer;
-  usuario: integer;
-  calificacion: integer;
-  equipo: integer;
+  complejidad: number;
+  usuario: number;
+  calificacion: number;
+  equipo: number;
 }

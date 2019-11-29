@@ -14,10 +14,10 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(private teamService: TeamService,) {
     teamService.getAllTeams().subscribe(team => {
-      this.animales = team[3].animals.length;
-      this.lista_a = team[3].animals;
-      this.act = team[3].actividades.length;
-      this.lista_act = team[3].actividades;
+      this.animales = team[0].animals.length;
+      this.lista_a = team[0].animals;
+      this.act = team[0].actividades.length;
+      this.lista_act = team[0].actividades;
     });
   }
 

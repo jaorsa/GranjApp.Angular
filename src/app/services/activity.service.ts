@@ -21,12 +21,12 @@ export class ActivityService {
 
   createActivity(activity:Activity){
     const path = ' http://granjapp2.appspot.com/activities/';
-    return this.http.post(path, animal)
+    return this.http.post(path, activity)
   }
 
   updateActivity(id, activity:Activity){
     const path = ' http://granjapp2.appspot.com/activities/';
-    return this.http.put(path + id,animal);
+    return this.http.put(path + id,activity);
   }
 
   deleteActivity(id){

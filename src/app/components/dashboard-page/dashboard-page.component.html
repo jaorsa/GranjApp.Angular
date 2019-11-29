@@ -11,21 +11,21 @@
             <th>Actividad</th>
             <th>Asignado</th>
             <th>Inicio</th>
-            <th>Realiado</th>
+            <th>Realizado</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+        <tbody *ngIf="act">
+          <tr *ngFor="let u of lista_act;">
+            <th>{{u.name}}</th>
+            <th>Usuario :v</th>
+            <th>{{u.fechaInicio}}</th>
+            <th>Bools</th>
           </tr>
         </tbody>
       </table>
       <!-- si no hay valores -->
-      <div class = "anuncio col-md-12">
-        <p class = "anuncio-texto">No hay historial</p>
+      <div class = "anuncio col-md-12" *ngIf="!act">
+        <p class = "anuncio-texto">No hay actividades</p>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
         </thead>
         <tbody *ngIf="actividades">
           <tr *ngFor="let u of lista_act;">
-            <th>{{u.zo}}</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -54,7 +54,7 @@
         </tbody>
       </table>
       <!-- si no hay valores -->
-      <div class = "anuncio col-md-12" *ngIf="!actividades">
+      <div class = "anuncio col-md-12">
         <p class = "anuncio-texto">No hay cultivos</p>
       </div>
     </div>

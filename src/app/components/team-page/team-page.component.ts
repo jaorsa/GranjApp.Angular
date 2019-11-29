@@ -17,9 +17,9 @@ export class TeamPageComponent implements OnInit {
     private roleService: RoleService,
   ){
     teamService.getAllTeams().subscribe(team => {
-      this.teams = team;
-      this.users = team[3].usuarios.length;
-      this.lista = team[3].usuarios;
+      this.teams = team[0];
+      this.users = team[0].usuarios.length;
+      this.lista = team[0].usuarios;
     });
   }
 
