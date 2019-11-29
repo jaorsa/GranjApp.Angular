@@ -44,17 +44,17 @@
             <th>Salud</th>
           </tr>
         </thead>
-        <tbody *ngIf="actividades">
-          <tr *ngFor="let u of lista_act;">
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+        <tbody *ngIf="cultivo">
+          <tr *ngFor="let u of cultivo;">
+            <th>{{u[0].name}}</th>
+            <th>{{u[1].name}}</th>
+            <th>{{u[2].name}}</th>
+            <th>Salud :v</th>
           </tr>
         </tbody>
       </table>
       <!-- si no hay valores -->
-      <div class = "anuncio col-md-12">
+      <div class = "anuncio col-md-12" *ngIf="!cultivo">
         <p class = "anuncio-texto">No hay cultivos</p>
       </div>
     </div>
@@ -73,8 +73,8 @@
         </thead>
         <tbody *ngIf="animales">
           <tr *ngFor="let u of animales;">
-            <th>{{u.name}}</th>
-            <th>Aqui va el animal</th>
+            <th>{{u[1].name}}</th>
+            <th>{{u[0].name}}</th>
             <th>Aqui va la salud</th>
           </tr>
         </tbody>

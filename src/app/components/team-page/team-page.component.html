@@ -1,7 +1,10 @@
 <div class="row" >
-  <div class="col-md-12">
+  <div class="col-md-10">
     <h2>{{teams.name}}</h2>
     <p>{{teams.description}}</p>
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-primary" id="editar_team">Editar</button>
   </div>
 </div>
 <div class="row">
@@ -27,5 +30,26 @@
   <!-- si no hay valores -->
   <div class = "anuncio col-md-12" *ngIf="!users">
     <p class = "anuncio-texto">No hay integrantes</p>
+  </div>
+</div>
+
+<!-- modal -->
+<div class="modal equipo"role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar equipo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>

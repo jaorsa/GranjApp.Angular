@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { UserService } from '../../services/user.service';
+import { SpecieService } from '../../services/specie.service';
+import { ZoneService } from '../../services/zone.service';
+import { SubzoneService } from '../../services/subzone.service';
+import { CropService } from '../../services/crop.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -8,20 +12,53 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent implements OnInit {
-  animales: object[];
+  animales: object[] = [];
   act: object[] = [];
-  comodin:object;
+  cultivos: object[] = [];
+  comodin1:object;
+  comodin2:object;
+  comodin3:object;
+  comodin4:object;
+  comodin5:object;
 
-  constructor(private teamService: TeamService,private userService: UserService,) {
+  constructor(private teamService: TeamService,private userService: UserService,
+    private specieService: SpecieService,private zoneService: ZoneService,
+    private subzoneService: SubzoneService,private cropService: CropService,) {
     teamService.getAllTeams().subscribe(team => {
-      this.animales = team[0].animals;
       for(var i:number = 0; i < team[0].actividades.length; i++){
-        this.comodin = team[0].actividades[i];
-        userService.getUser(this.comodin.usuario).subscribe(u => {
-          console.log(this.comodin);
-          this.act.push([u, this.comodin]);
+        this.comodin1 = team[0].actividades[i];
+        userService.getUser(this.comodin1.usuario).subscribe(u => {
+          this.act.push([u, this.comodin1]);
         });
       }
+      
+      for(var i:number = 0; i < team[0].animals.length; i++){
+        this.comodin2 = team[0].animals[i];
+        specieService.getSpecie(this.comodin2.especie).subscribe(s => {
+          this.animales.push([s, this.comodin2]);
+        });
+      }
+      for(var i:number = 0; i < team[0].zones.length; i++){
+        this.comodin3 = team[0].zones[i];
+        zoneService.getZone(this.comodin3.id).subscribe(z => {
+          for(var j:number = 0; j < z.subzones.length; j++){
+            this.comodin4 = z.subzones[j];
+            subzoneService.getSubzone(this.comodin4.id).subscribe(sz => {
+              for(var k:number = 0; k < sz.plantings.length; k++){
+                this.comodin5 = sz.plantings[k];
+                cropService.getCrop(this.comodin5.cultivo).subscribe(c => {
+                  this.cultivos.push([this.comodin3, this.comodin4, this.comodin5, c]);
+                  console.log(this.comodin3);
+                  console.log(this.comodin4);
+                  console.log(this.comodin5);
+                  console.log(c);
+                });
+              }
+            });
+          }
+        });
+      }
+      console.log(this.cultivos);
     });
   }
 
