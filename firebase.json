@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/GranjApp",
+    "public": "dist/GranjApp/",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -27,26 +27,26 @@ export class DashboardPageComponent implements OnInit {
     teamService.getAllTeams().subscribe(team => {
       for(var i:number = 0; i < team[0].actividades.length; i++){
         this.comodin1 = team[0].actividades[i];
-        userService.getUser(this.comodin1.usuario).subscribe(u => {
+        userService.getUser(team[0].actividades[i].usuario).subscribe(u => {
           this.act.push([u, this.comodin1]);
         });
       }
 
       for(var i:number = 0; i < team[0].animals.length; i++){
         this.comodin2 = team[0].animals[i];
-        specieService.getSpecie(this.comodin2.especie).subscribe(s => {
+        specieService.getSpecie(team[0].animals[i].especie).subscribe(s => {
           this.animales.push([s, this.comodin2]);
         });
       }
       for(var i:number = 0; i < team[0].zones.length; i++){
         this.comodin3 = team[0].zones[i];
-        zoneService.getZone(this.comodin3.id).subscribe(z => {
+        zoneService.getZone(team[0].zones[i].id).subscribe(z => {
           for(var j:number = 0; j < z.subzones.length; j++){
             this.comodin4 = z.subzones[j];
-            subzoneService.getSubzone(this.comodin4.id).subscribe(sz => {
+            subzoneService.getSubzone(z.subzones[j].id).subscribe(sz => {
               for(var k:number = 0; k < sz.plantings.length; k++){
                 this.comodin5 = sz.plantings[k];
-                cropService.getCrop(this.comodin5.cultivo).subscribe(c => {
+                cropService.getCrop(sz.plantings[k].cultivo).subscribe(c => {
                   this.cultivos.push([this.comodin3, this.comodin4, this.comodin5, c]);
                 });
               }
