@@ -3,17 +3,17 @@
     <img class="card-img-top" src="../assets/logo.png" alt="Card image cap" width="180px" height="200px">
     <div class="card-body">
       <h2 class="card-title text-center">Inicia Sesión</h2>
-      <form>
+      <form (ngSubmit)="onSubmitLogin()">
         <div class="form-group">
           <label for="mail">Correo:</label>
-          <input class="form-control" type="email" name="mail" value="">
+          <input class="form-control" type="email" name="mail" value="" [(ngModel)]="email" required>
         </div>
         <div class="form-group">
           <label for="pw">Contraseña:</label>
-          <input class="form-control" type="password" name="pw" value="">
+          <input class="form-control" type="password" name="pw" value="" [(ngModel)]="password" required>
         </div>
         <div class="text-center">
-          <a type="button" class="btn btn-success btn-lg" [routerLink]="['/dashboard']">Ingresar</a>
+          <button type="submit" class="btn btn-success btn-lg">Ingresar</button>
         </div>
         <br>
         <p class="text-center">¿No tienes cuenta? <a [routerLink] = "['/register']">Registrate</a></p>
