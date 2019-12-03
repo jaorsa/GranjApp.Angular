@@ -11,10 +11,14 @@ import { TeamService } from '../../services/team.service';
 export class NavBarComponent implements OnInit {
   id: number;
   url: string;
+  teams;
 
   constructor(private loginService: LoginService,
     private teamService: TeamService, private router: Router) {
       this.url = this.router.url;
+      this.teamService.getAllTeams().subscribe(t => {
+        this.teams = t;
+      });
   }
 
   ngOnInit() {

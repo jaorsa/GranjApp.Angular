@@ -19,11 +19,11 @@ export class DashboardPageComponent implements OnInit {
   animales: object[] = [];
   act: object[] = [];
   cultivos: object[] = [];
-  comodin1:object;
-  comodin2:object;
-  comodin3:object;
-  comodin4:object;
-  comodin5:object;
+  comodin1;
+  comodin2;
+  comodin3;
+  comodin4;
+  comodin5;
 
   constructor(private teamService: TeamService,private userService: UserService,
     private specieService: SpecieService,private zoneService: ZoneService,

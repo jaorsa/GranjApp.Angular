@@ -1,4 +1,4 @@
 <nav class="navbar">
     <a class="navbar-brand" [routerLink] = "['/']"><h1>GranjApp</h1></a>
-    <h3 class="pull-right equipo" *ngIf="url != '/'">Equipo</h3>
+    <h3 class="pull-right equipo" *ngIf="url != '/'">{{teams[0].name}}</h3>
 </nav>

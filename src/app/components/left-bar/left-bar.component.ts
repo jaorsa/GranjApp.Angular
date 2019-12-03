@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LeftBarComponent implements OnInit {
   id: number = 0;
-  router: string;
+  url: string;
 
   constructor(private loginService: LoginService,
     private router: Router) {
