@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { TeamService } from '../../services/team.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,16 +10,18 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavBarComponent implements OnInit {
   id: number;
+  url: string;
 
-  constructor(private loginService: LoginService, ) {
-    this.id = this.loginService.getId();
+  constructor(private loginService: LoginService,
+    private teamService: TeamService, private router: Router) {
+      this.url = this.router.url;
   }
 
   ngOnInit() {
-
   }
 
   ngDoCheck() {
+    this.url = this.router.url;
     this.id = this.loginService.getId();
   }
 

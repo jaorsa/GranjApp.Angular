@@ -5,6 +5,8 @@ import { SpecieService } from '../../services/specie.service';
 import { ZoneService } from '../../services/zone.service';
 import { SubzoneService } from '../../services/subzone.service';
 import { CropService } from '../../services/crop.service';
+import { AnimalService } from '../../services/animal.service';
+import { ActivityService } from '../../services/activity.service';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -26,7 +28,8 @@ export class DashboardPageComponent implements OnInit {
   constructor(private teamService: TeamService,private userService: UserService,
     private specieService: SpecieService,private zoneService: ZoneService,
     private subzoneService: SubzoneService,private cropService: CropService,
-    private loginService: LoginService,) {
+    private loginService: LoginService, private animalService: AnimalService,
+    private activityService: ActivityService) {
     this.id = this.loginService.getId();
     teamService.getAllTeams().subscribe(team => {
       for(var i:number = 0; i < team[0].actividades.length; i++){
@@ -61,6 +64,27 @@ export class DashboardPageComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  deleteAnimal(id) {
+    this.animalService.deleteAnimal(id).subscribe(msn => {
+      console.log(msn);
+    });
+    setTimeout(() => {location.reload()}, 3000);
+  }
+
+  deleteActividad(id) {
+    this.activityService.deleteActivity(id).subscribe(msn => {
+      console.log(msn);
+    });
+    setTimeout(() => {location.reload()}, 3000);
+  }
+
+  deleteCultivo(id) {
+    this.cropService.deleteCrop(id).subscribe(msn => {
+      console.log(msn);
+    });
+    setTimeout(() => {location.reload()}, 3000);
   }
 
 }

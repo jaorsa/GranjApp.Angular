@@ -31,7 +31,7 @@ export class TeamPageComponent implements OnInit {
     this.roleService.deleteRole(id).subscribe(msn => {
       console.log(msn);
     });
-    setTimeout(() => {location.reload()}, 5000);
+    setTimeout(() => {location.reload()}, 3000);
   }
 
 }
