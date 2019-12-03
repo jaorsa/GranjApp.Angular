@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { UserService } from '../../services/user.service';
 import { sha256, sha224 } from 'js-sha256';
 
 @Component({
@@ -11,22 +13,30 @@ export class LoginPageComponent implements OnInit {
 
   email: string;
   password: string;
-  token: string;
+  token: string = "";
+  error: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService,
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmitLogin() {
-    /*this.authService.login(this.email, this.password);
-    this.email = this.password = '';*/
-    var login = {
+    var user = {
       correo: this.email,
       password: sha256(this.password),
     };
-    this.loginService.createLogin(login).subscribe(tkn => {
-      console.log(tkn);
+    this.userService.getAllUsers().subscribe(users => {
+      for(var i:number = 0; i < users.length; i++){
+        if(users[i].correo == user.correo && users[i].password == user.password){
+          this.loginService.createLogin(user).subscribe(tkn => {
+            this.token = tkn.token;
+            this.router.navigate(['/dashboard', {}]);
+          });
+        }
+      }
     });
     this.email = this.password = "";
   }
