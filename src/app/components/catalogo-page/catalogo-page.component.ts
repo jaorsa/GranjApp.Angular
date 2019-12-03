@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { ZoneService } from '../../services/zone.service';
 import { SubzoneService } from '../../services/subzone.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-catalogo-page',
@@ -9,13 +10,16 @@ import { SubzoneService } from '../../services/subzone.service';
   styleUrls: ['./catalogo-page.component.scss']
 })
 export class CatalogoPageComponent implements OnInit {
+  id: number;
   teams;
   zonas;
   lista_zonas;
   i_zones:object[] = [];
 
   constructor(private teamService: TeamService,
-  private zoneService: ZoneService,private subzoneService: SubzoneService,) {
+  private zoneService: ZoneService,private subzoneService: SubzoneService,
+  private loginService: LoginService,) {
+    this.id = this.loginService.getId();
     teamService.getAllTeams().subscribe(team => {
       this.teams = team[0];
       this.zonas = team[0].zones.length;

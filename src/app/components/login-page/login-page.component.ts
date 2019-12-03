@@ -10,15 +10,15 @@ import { sha256, sha224 } from 'js-sha256';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-
+  id: number;
   email: string;
   password: string;
-  token: string = "";
-  error: string;
 
   constructor(private loginService: LoginService,
     private userService: UserService,
-    private router: Router) { }
+    private router: Router) {
+      this.id = this.loginService.getId();
+    }
 
   ngOnInit() {
   }
@@ -31,8 +31,8 @@ export class LoginPageComponent implements OnInit {
     this.userService.getAllUsers().subscribe(users => {
       for(var i:number = 0; i < users.length; i++){
         if(users[i].correo == user.correo && users[i].password == user.password){
+          this.loginService.setId(users[i].id);
           this.loginService.createLogin(user).subscribe(tkn => {
-            this.token = tkn.token;
             this.router.navigate(['/dashboard', {}]);
           });
         }

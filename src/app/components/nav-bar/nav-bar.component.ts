@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from "../../services/auth.service";
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,20 +8,18 @@ import { AuthService } from "../../services/auth.service";
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  public ref: string = "";
-  private router: Router;
+  id: number;
 
-  constructor(public authService: AuthService ) { 
-    
+  constructor(private loginService: LoginService, ) {
+    this.id = this.loginService.getId();
   }
 
   ngOnInit() {
-    //this.ref = this.router.url;
-    
+
   }
 
-  onClickLogout(){
-    this.authService.logout();
+  ngDoCheck() {
+    this.id = this.loginService.getId();
   }
 
 }

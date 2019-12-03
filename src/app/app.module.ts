@@ -12,12 +12,9 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { TeamPageComponent } from "./components/team-page/team-page.component";
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
-import { AccessPageComponent } from './components/access-page/access-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { DashboardPageComponent } from './components/dashboard-page/dashboard-page.component';
 import { LeftBarComponent } from './components/left-bar/left-bar.component';
@@ -27,12 +24,9 @@ import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
     TeamPageComponent,
     NavBarComponent,
-    RegisterPageComponent,
     LoginPageComponent,
-    AccessPageComponent,
     NotFoundPageComponent,
     DashboardPageComponent,
     LeftBarComponent,

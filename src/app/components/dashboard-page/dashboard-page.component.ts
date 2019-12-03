@@ -5,6 +5,7 @@ import { SpecieService } from '../../services/specie.service';
 import { ZoneService } from '../../services/zone.service';
 import { SubzoneService } from '../../services/subzone.service';
 import { CropService } from '../../services/crop.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -12,6 +13,7 @@ import { CropService } from '../../services/crop.service';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent implements OnInit {
+  id: number;
   animales: object[] = [];
   act: object[] = [];
   cultivos: object[] = [];
@@ -23,7 +25,9 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(private teamService: TeamService,private userService: UserService,
     private specieService: SpecieService,private zoneService: ZoneService,
-    private subzoneService: SubzoneService,private cropService: CropService,) {
+    private subzoneService: SubzoneService,private cropService: CropService,
+    private loginService: LoginService,) {
+    this.id = this.loginService.getId();
     teamService.getAllTeams().subscribe(team => {
       for(var i:number = 0; i < team[0].actividades.length; i++){
         this.comodin1 = team[0].actividades[i];
@@ -31,7 +35,6 @@ export class DashboardPageComponent implements OnInit {
           this.act.push([u, this.comodin1]);
         });
       }
-
       for(var i:number = 0; i < team[0].animals.length; i++){
         this.comodin2 = team[0].animals[i];
         specieService.getSpecie(team[0].animals[i].especie).subscribe(s => {

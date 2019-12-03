@@ -6,11 +6,20 @@ import { Login } from '../interfaces/login';
   providedIn: 'root'
 })
 export class LoginService {
+  id: number;
 
   constructor(private http: HttpClient) { }
 
   createLogin(login:Login){
     const path = ' http://granjapp2.appspot.com/login/1';
     return this.http.post(path, login)
+  }
+
+  setId(id){
+    this.id = id;
+  }
+
+  getId(){
+    return this.id;
   }
 }

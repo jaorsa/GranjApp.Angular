@@ -1,12 +1,14 @@
-<div class = "row col-md-12">
-  <a [routerLink] = "['/dashboard']"><span>Inicio</span></a>
-</div>
-<div class = "row col-md-12">
-  <a [routerLink] = "['/catalogo']"><span>Catalogos</span></a>
-</div>
-<div class = "row col-md-12">
-  <a [routerLink] = "['/team']"><span>Equipo</span></a>
-</div>
-<div class = "row col-md-12">
-  <a href = "#"><span>Salir</span></a>
+<div class="col-md-2" *ngIf="id">
+  <div class = "row col-md-12">
+    <a [routerLink] = "['/dashboard']"><span>Inicio</span></a>
+  </div>
+  <div class = "row col-md-12">
+    <a [routerLink] = "['/catalogo']"><span>Catalogos</span></a>
+  </div>
+  <div class = "row col-md-12">
+    <a [routerLink] = "['/team']"><span>Equipo</span></a>
+  </div>
+  <div class = "row col-md-12">
+    <button type="button" class="btn btn-danger" (click) = "logout()"><span>Salir</span></button>
+  </div>
 </div>
