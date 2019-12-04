@@ -1,1 +1,15 @@
-<p>crear-zona works!</p>
+<div class="row align-items-center justify-content-center">
+  <h3>Agregar Zona</h3>
+</div>
+<br>
+<div class="row align-items-center justify-content-center">
+  <form (ngSubmit)="onSubmitLogin()">
+    <div class="form-group">
+      <label for="zona">Nombre:</label>
+      <input class="form-control" type="text" name="zona" value="" [(ngModel)]="name" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+    </div>
+  </form>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TeamService } from '../../services/team.service';
 import { ZoneService } from '../../services/zone.service';
 import { SubzoneService } from '../../services/subzone.service';
@@ -18,7 +19,7 @@ export class CatalogoPageComponent implements OnInit {
 
   constructor(private teamService: TeamService,
   private zoneService: ZoneService,private subzoneService: SubzoneService,
-  private loginService: LoginService,) {
+  private loginService: LoginService, private router: Router) {
     this.id = this.loginService.getId();
     teamService.getAllTeams().subscribe(team => {
       this.teams = team[0];
@@ -51,11 +52,11 @@ export class CatalogoPageComponent implements OnInit {
     setTimeout(() => {location.reload()}, 5000);
   }
 
-  createZone(){
+  agregarZona(){
     this.router.navigate(['/crear-zona', {}]);
   }
 
-  createSubzone(){
+  agregarSubzona(){
     this.router.navigate(['/crear-subzona', {}]);
   }
 }
