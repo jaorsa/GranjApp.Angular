@@ -50,4 +50,12 @@ export class CatalogoPageComponent implements OnInit {
     });
     setTimeout(() => {location.reload()}, 5000);
   }
+
+  createZone(){
+    this.router.navigate(['/crear-zona', {}]);
+  }
+
+  createSubzone(){
+    this.router.navigate(['/crear-subzona', {}]);
+  }
 }

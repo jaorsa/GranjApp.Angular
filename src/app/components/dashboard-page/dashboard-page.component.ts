@@ -19,8 +19,7 @@ export class DashboardPageComponent implements OnInit {
   animales: object[] = [];
   act: object[] = [];
   cultivos: object[] = [];
-  comodin1;
-  comodin2;
+  comodin2: string;
   comodin3;
   comodin4;
   comodin5;
@@ -33,16 +32,17 @@ export class DashboardPageComponent implements OnInit {
     this.id = this.loginService.getId();
     teamService.getAllTeams().subscribe(team => {
       for(var i:number = 0; i < team[0].actividades.length; i++){
-        this.comodin1 = team[0].actividades[i];
+        var comodin1 = "";
         userService.getUser(team[0].actividades[i].usuario).subscribe(u => {
-          this.act.push([u, this.comodin1]);
+          comodin1 = u.name + " " + u.lastname;
         });
+        this.act.push([comodin1, team[0].actividades[i]]);
       }
       for(var i:number = 0; i < team[0].animals.length; i++){
-        this.comodin2 = team[0].animals[i];
         specieService.getSpecie(team[0].animals[i].especie).subscribe(s => {
-          this.animales.push([s, this.comodin2]);
+          this.comodin2 = s.name;
         });
+        this.animales.push([this.comodin2, team[0].animals[i]]);
       }
       for(var i:number = 0; i < team[0].zones.length; i++){
         this.comodin3 = team[0].zones[i];

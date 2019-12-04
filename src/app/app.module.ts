@@ -20,6 +20,8 @@ import { DashboardPageComponent } from './components/dashboard-page/dashboard-pa
 import { LeftBarComponent } from './components/left-bar/left-bar.component';
 import { AuthService } from './services/auth.service';
 import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.component';
+import { CrearZonaComponent } from './components/crear-zona/crear-zona.component';
+import { CrearSubzonaComponent } from './components/crear-subzona/crear-subzona.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { CatalogoPageComponent } from './components/catalogo-page/catalogo-page.
     DashboardPageComponent,
     LeftBarComponent,
     CatalogoPageComponent,
+    CrearZonaComponent,
+    CrearSubzonaComponent,
   ],
   imports: [
     BrowserModule,
