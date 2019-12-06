@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   createLogin(login:Login){
-    const path = ' http://granjapp2.appspot.com/login/1';
+    const path = ' https://granjapp2.appspot.com/login/1';
     return this.http.post(path, login)
   }
 

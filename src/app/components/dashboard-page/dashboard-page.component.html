@@ -9,7 +9,6 @@
         <thead>
           <tr>
             <th>Actividad</th>
-            <th>Asignado</th>
             <th>Inicio</th>
             <th>Realizado</th>
             <th>Opciones</th>
@@ -18,7 +17,6 @@
         <tbody *ngIf="act">
           <tr *ngFor="let a of act;">
             <th>{{a[1].name}}</th>
-            <th>{{a[0]}}</th>
             <th>{{a[1].fechaInicio}}</th>
             <th>{{a[1].terminado}}</th>
             <th><button type="button" class="btn btn-danger" (click)="deleteActividad(a[1].id)">Eliminar</button></th>
@@ -71,7 +69,6 @@
         <thead>
           <tr>
             <th>Camada</th>
-            <th>Animal</th>
             <th>Salud</th>
             <th>Opciones</th>
           </tr>
@@ -79,7 +76,6 @@
         <tbody *ngIf="animales">
           <tr *ngFor="let u of animales;">
             <th>{{u[1].name}}</th>
-            <th>{{u[0]}}</th>
             <th>{{u[1].salud}}</th>
             <th><button type="button" class="btn btn-danger" (click)="deleteAnimal(u[1].id)">Eliminar</button></th>
           </tr>
